@@ -1,7 +1,136 @@
-.material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
+/* ********** Custom Properties ********** */
+
+:root {
+    --primary-font: 'Poppins', sans-serif;
+
+    --green: #4CA154;
+    --blue: #2A4DD0;
+    --dark-blue: #111729;
+    --light-blue: #223344;
+    --gray-one: #909193;
+    --gray-two: #F2F9FE;
+    --white: #FFFFFF;
 }
+
+/* ********** Reset ********** */
+
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: var(--primary-font);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--light-blue);
+    background-color: var(--gray-two);
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* ********** Components ********** */
+/* ****** Nav ****** */
+.nav{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav__logo-menu{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
+.nav__logo-menu span{
+    cursor: pointer;
+}
+
+.nav__link{
+    width: 65%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--white);
+}
+
+.nav__link__list{
+    margin-top: 20%;
+    text-align: center;
+}
+
+.nav__link button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ********** Utilities ********** */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.body-text {
+    font-size: 1.125em;
+}
+
+.btn-text {
+    font-size: 1em;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL'0,
+        'wght'400,
+        'GRAD'0,
+        'opsz'24
+}
+
+.small-text {
+    font-size: .875em;
+}
+
+.tittle-text {
+    font-size: 3.75em;
+}
+
+
+/* ********** Site Styles ********** */
