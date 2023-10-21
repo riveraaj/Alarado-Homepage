@@ -47,6 +47,7 @@ button {
 img {
     width: 100%;
     height: auto;
+    object-fit: contain;
 }
 
 ul,
@@ -58,7 +59,7 @@ ol {
 
 /* ********** Components ********** */
 /* ****** Nav ****** */
-.nav{
+.nav {
     position: relative;
     display: flex;
     width: 100%;
@@ -67,42 +68,78 @@ ol {
     align-items: center;
 }
 
-.nav__logo-menu{
+.nav__logo-menu {
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0 1.5rem;
 }
 
-.nav__logo-menu span{
+.nav__logo-menu span {
     cursor: pointer;
 }
 
-.nav__link{
-    width: 65%;
-    height: 100vh;
-    display: flex;
+.nav__link {
+    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;
     right: 0;
     top: 0;
+    width: 65%;
+    height: 100vh;
     background-color: var(--white);
 }
 
-.nav__link__list{
+.nav__link__list {
     margin-top: 20%;
     text-align: center;
 }
 
-.nav__link button{
+.nav__link__list__item:not(:first-child) {
+    margin-top: 3rem;
+}
+
+.nav__link__list__item:first-child {
+    margin-top: 1rem;
+}
+
+.nav__link button {
     display: flex;
+    margin-top: 1.5rem;
     justify-content: space-between;
     align-items: center;
 }
 
-/* ********** Utilities ********** */
+/* ****** Hero ****** */
+.hero {
+    display: flex;
+    flex-direction: column-reverse;
+}
 
+.hero__image {
+    max-width: 37.5rem;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+}
+
+.hero__text {
+    margin-top: 6rem;
+    padding: 0 4rem;
+}
+
+.hero__text > span:first-child{
+    text-transform: uppercase;
+}
+
+.hero__text__check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* ********** Utilities ********** */
 .container {
     max-width: 1200px;
     margin: auto;
@@ -116,7 +153,16 @@ ol {
     font-size: 1em;
 }
 
+.small-text {
+    font-size: .7em;
+}
+
+.tittle-text {
+    font-size: 3em;
+}
+
 .material-symbols-outlined {
+    user-select: none;
     font-variation-settings:
         'FILL'0,
         'wght'400,
@@ -124,12 +170,27 @@ ol {
         'opsz'24
 }
 
-.small-text {
-    font-size: .875em;
+.material-symbols-outlined:first-of-type {
+    cursor: pointer;
+    z-index: 1;
 }
 
-.tittle-text {
-    font-size: 3.75em;
+@media (min-width: 64rem) {
+    .body-text {
+        font-size: 1.125em;
+    }
+
+    .btn-text {
+        font-size: 1em;
+    }
+
+    .small-text {
+        font-size: .875em;
+    }
+
+    .tittle-text {
+        font-size: 3.75em;
+    }
 }
 
 
