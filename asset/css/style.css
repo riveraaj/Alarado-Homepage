@@ -208,7 +208,7 @@ ol {
     .nav__link__list {
         width: 75%;
         display: flex;
-        justify-content: start;
+        justify-content: center;
         margin-top: 0;
         gap: 1.45rem;
     }
