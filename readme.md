@@ -27,7 +27,7 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/riveraaj/Simple-Homepage/main/asset/img/proto.png)
+![screenshot](https://raw.githubusercontent.com/riveraaj/Simple-Homepage/main/asset/img/page.png?token=GHSAT0AAAAAACIGWABF7VK4FLXDCR3W6PFQZJ223UA)
 
 - You can see the page in the following link: https://riveraaj.github.io/Simple-Homepage/
 - In this small project I was able to improve good practices in CSS3, layout and structure in HTML5.
