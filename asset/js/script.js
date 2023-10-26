@@ -1,6 +1,11 @@
 window.addEventListener('DOMContentLoaded', () => {
     openMobileMenu();
     toggleDarkMode();
+    openNavDesktop();
+})
+
+window.addEventListener('resize', () => {
+    openNavDesktop();
 })
 
 let closeMenuTimeout;
@@ -22,12 +27,23 @@ function toggleDarkMode() {
         $parentHeroText = document.querySelector('.hero__text'),
         $tittleDarkMode = $parentHeroText.querySelector('h1'),
         $spanDarkMode = $parentHeroText.querySelector('span'),
-        $pathLogo = document.querySelectorAll('.nav__logo-menu_link__path');
+        $pathLogo = document.querySelectorAll('.nav__logo-menu_link__path'),
+        $firstLink = document.querySelector('.nav__link__list__item');
 
     $btnSwitch.addEventListener('click', () => {
-        ($btnSwitch.classList.contains('inDarkMode')) ? switchToLightMode($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo) : switchToDarkMode($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo);
+        ($btnSwitch.classList.contains('inDarkMode')) ? switchToLightMode($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo, $firstLink) : switchToDarkMode($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo, $firstLink);
 
     });
+}
+
+function openNavDesktop() {
+    const $menu = document.querySelector('.nav__link');
+
+    if (window.innerWidth > 1023) {
+        $menu.classList.remove('hidden');
+    } else {
+        $menu.classList.add('hidden');
+    }
 }
 
 const openMenu = (btnMenu, menuContainer) => {
@@ -57,18 +73,20 @@ function cancelCloseMenu() {
     }
 }
 
-const switchToLightMode = ($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo) => {
-    $body.classList.remove('dark-mode');
-    $tittleDarkMode.classList.remove('dark-mode');
-    $spanDarkMode.classList.remove('dark-mode');
-    $btnSwitch.classList.remove('inDarkMode');
-    $pathLogo.forEach(x => x.classList.remove('dark-mode'));
+const switchToLightMode = (body, tittleDarkMode, spanDarkMode, btnSwitch, pathLogo, firstLink) => {
+    body.classList.remove('dark-mode');
+    tittleDarkMode.classList.remove('dark-mode');
+    spanDarkMode.classList.remove('dark-mode');
+    btnSwitch.classList.remove('inDarkMode');
+    pathLogo.forEach(x => x.classList.remove('dark-mode'));
+    firstLink.classList.remove('dark-mode');
 }
 
-const switchToDarkMode = ($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo) => {
-    $body.classList.add('dark-mode');
-    $tittleDarkMode.classList.add('dark-mode');
-    $spanDarkMode.classList.add('dark-mode');
-    $btnSwitch.classList.add('inDarkMode');
-    $pathLogo.forEach(x => x.classList.add('dark-mode'));
+const switchToDarkMode = (body, tittleDarkMode, spanDarkMode, btnSwitch, pathLogo, firstLink) => {
+    body.classList.add('dark-mode');
+    tittleDarkMode.classList.add('dark-mode');
+    spanDarkMode.classList.add('dark-mode');
+    btnSwitch.classList.add('inDarkMode');
+    pathLogo.forEach(x => x.classList.add('dark-mode'));
+    firstLink.classList.add('dark-mode');
 }
