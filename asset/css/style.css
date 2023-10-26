@@ -106,7 +106,7 @@ ol {
     margin-top: 1rem;
 }
 
-.nav__link button {
+.nav__link label {
     width: 3rem;
     height: 1.5rem;
     display: flex;
@@ -222,6 +222,10 @@ ol {
 
 
 /* ********** Site Styles ********** */
+body.dark-mode {
+    background-color: var(--dark-mode);
+}
+
 .nav__link__list__item:not(:first-child) a {
     font-size: 1.5em;
     font-weight: 600;
@@ -234,6 +238,14 @@ ol {
     color: var(--dark-blue);
 }
 
+.nav__logo-menu_link__path{
+    fill: var(--dark-blue);
+}
+
+.nav__logo-menu_link__path.dark-mode {
+    fill: var(--gray-two);
+}
+
 @keyframes openMenu {
     0% {
         transform: translateX(100%);
@@ -241,7 +253,7 @@ ol {
         -moz-transform: translateX(100%);
         -ms-transform: translateX(100%);
         -o-transform: translateX(100%);
-}
+    }
 
     100% {
         transform: translateY(0);
@@ -254,22 +266,23 @@ ol {
 
 @keyframes closeMenu {
     0% {
-      transform: translateY(0);
-      -webkit-transform: translateY(0);
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -o-transform: translateY(0);
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
     }
-    100% {
-      transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      -moz-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-      -o-transform: translateX(100%);
-}
-  }
 
-.nav__link{
+    100% {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+    }
+}
+
+.nav__link {
     animation: openMenu .2s ease-in;
     -webkit-animation: openMenu .2s ease-in;
 }
@@ -279,10 +292,13 @@ ol {
     -webkit-animation: closeMenu 0.2s ease-out;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-  }
+}
 
-.nav__link button {
+.nav__link label {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--dark-blue);
+    gap: .2rem;
     border-radius: 1rem;
     -webkit-border-radius: 1rem;
     -moz-border-radius: 1rem;
@@ -290,13 +306,47 @@ ol {
     -o-border-radius: 1rem;
 }
 
-.nav__link button img:last-child {
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    -ms-border-radius: 100%;
-    -o-border-radius: 100%;
+.nav__link label svg {
+    width: fit-content;
+    height: fit-content;
+}
+
+
+.nav__link label svg:last-child {
     background-color: var(--gray-two);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+
+.nav__link__btn-dark-mode__sun {
+    fill: var(--dark-blue);
+    stroke: var(--dark-blue);
+}
+
+.nav__link label.inDarkMode svg:last-child {
+    background-color: transparent;
+}
+
+.nav__link label.inDarkMode .nav__link__btn-dark-mode__sun {
+    fill: var(--gray-two);
+    stroke: var(--gray-two);
+}
+
+.nav__link label.inDarkMode .nav__link__btn-dark-mode__moon {
+    fill: var(--dark-blue);
+}
+
+.nav__link label.inDarkMode svg:first-child {
+    background-color: var(--gray-two);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
 .hero__text>span:first-child {
@@ -311,7 +361,7 @@ ol {
 }
 
 .hero__text>h1.dark-mode,
-.hero__text.dark-mode>span.dark-mode:first-child {
+.hero__text>span.dark-mode:first-child {
     color: var(--gray-two) !important;
 }
 

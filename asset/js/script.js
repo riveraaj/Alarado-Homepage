@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     openMobileMenu();
+    toggleDarkMode();
 })
 
 let closeMenuTimeout;
@@ -15,11 +16,19 @@ function openMobileMenu() {
     });
 }
 
-function switchDarkMode(){
+function toggleDarkMode() {
     const $btnSwitch = document.querySelector('.nav__link__btn-dark-mode'),
-            $body = document.body;
-}
+        $body = document.body,
+        $parentHeroText = document.querySelector('.hero__text'),
+        $tittleDarkMode = $parentHeroText.querySelector('h1'),
+        $spanDarkMode = $parentHeroText.querySelector('span'),
+        $pathLogo = document.querySelectorAll('.nav__logo-menu_link__path');
 
+    $btnSwitch.addEventListener('click', () => {
+        ($btnSwitch.classList.contains('inDarkMode')) ? switchToLightMode($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo) : switchToDarkMode($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo);
+
+    });
+}
 
 const openMenu = (btnMenu, menuContainer) => {
     menuContainer.classList.remove('hidden');
@@ -46,4 +55,20 @@ function cancelCloseMenu() {
         clearTimeout(closeMenuTimeout);
         closeMenuTimeout = null;
     }
+}
+
+const switchToLightMode = ($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo) => {
+    $body.classList.remove('dark-mode');
+    $tittleDarkMode.classList.remove('dark-mode');
+    $spanDarkMode.classList.remove('dark-mode');
+    $btnSwitch.classList.remove('inDarkMode');
+    $pathLogo.forEach(x => x.classList.remove('dark-mode'));
+}
+
+const switchToDarkMode = ($body, $tittleDarkMode, $spanDarkMode, $btnSwitch, $pathLogo) => {
+    $body.classList.add('dark-mode');
+    $tittleDarkMode.classList.add('dark-mode');
+    $spanDarkMode.classList.add('dark-mode');
+    $btnSwitch.classList.add('inDarkMode');
+    $pathLogo.forEach(x => x.classList.add('dark-mode'));
 }
