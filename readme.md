@@ -1,4 +1,4 @@
-<h1 align="center">Simple - Homepage</h1>
+<h1 align="center">Alarado - Homepage</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -6,7 +6,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://riveraaj.github.io/Simple-Homepage">
+    <a href="https://riveraaj.github.io/Alarado-Homepage">
       Solution
     </a>
     <span> | </span>
@@ -27,7 +27,7 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/riveraaj/Simple-Homepage/main/asset/img/page.png?token=GHSAT0AAAAAACIGWABES4DDARTMMDLUR2LSZJ226LA)
+![screenshot](https://raw.githubusercontent.com/riveraaj/Alarado-Homepage/main/asset/img/page.png?token=GHSAT0AAAAAACIGWABES4DDARTMMDLUR2LSZJ226LA)
 
 - You can see the page in the following link: https://riveraaj.github.io/Simple-Homepage/
 - In this small project I was able to improve good practices in CSS3, layout and structure in HTML5.
