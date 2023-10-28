@@ -235,6 +235,7 @@ ol {
     -moz-border-radius: .7rem;
     -ms-border-radius: .7rem;
     -o-border-radius: .7rem;
+    cursor: pointer;
 }
 
 .hero__text__btn>span a {
